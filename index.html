@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Operación Enigma 12</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<video autoplay muted loop id="backgroundVideo">
+    <source src="assets/video/background.mp4" type="video/mp4">
+</video>
+
+<div id="overlay"></div>
+
+<!-- INTRO -->
+
+<section id="intro" class="page active">
+
+<div class="logo">
+
+<div class="logo-circle"></div>
+
+<h1>
+
+AGENCIA INTERNACIONAL
+
+DE DETECTIVES
+
+</h1>
+
+<p>
+
+NIVEL OMEGA
+
+</p>
+
+</div>
+
+<div class="loading">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="loadingText">
+
+Inicializando sistema...
+
+</p>
+
+</section>
+
+<!-- HUELLA -->
+
+<section id="fingerPage" class="page">
+
+<h2>
+
+ACCESO RESTRINGIDO
+
+</h2>
+
+<p>
+
+Coloca tu dedo sobre el escáner
+
+</p>
+
+<div id="scanner">
+
+<img src="assets/images/fingerprint.png">
+
+<div id="laser"></div>
+
+</div>
+
+<button id="scanButton">
+
+ESCANEAR
+
+</button>
+
+</section>
+
+<!-- TERMINAL -->
+
+<section id="terminalPage" class="page">
+
+<pre id="terminal"></pre>
+
+<button id="nextMission">
+
+COMENZAR MISIÓN
+
+</button>
+
+</section>
+
+<!-- RETO -->
+
+<section id="challenge1" class="page">
+
+<h2>
+
+PRIMER RETO
+
+</h2>
+
+<p>
+
+Completa la palabra
+
+</p>
+
+<h1>
+
+E _ C A P E
+
+</h1>
+
+<input id="answer1">
+
+<button id="verify1">
+
+DESBLOQUEAR
+
+</button>
+
+<p id="result1"></p>
+
+</section>
+
+<!-- INVITACIÓN -->
+
+<section id="invitation" class="page">
+
+<div class="card">
+
+<h1>
+
+OPERACIÓN ENIGMA
+
+</h1>
+
+<h2>
+
+MARIFÉ
+
+</h2>
+
+<h3>
+
+12 AÑOS
+
+</h3>
+
+<p>
+
+Has sido seleccionada para integrar el equipo de detectives.
+
+Tu misión será resolver todos los enigmas antes de que el tiempo termine.
+
+</p>
+
+<div class="info">
+
+📅 Sábado 22 de agosto
+
+<br><br>
+
+🕒 3:00 PM
+
+<br><br>
+
+📍 Jr. Manuel Arrisueño 637
+
+<br>
+
+Urb. Santa Catalina
+
+La Victoria
+
+<br><br>
+
+Referencia:
+
+Ingreso por Av. Campodónico cuadra 4
+
+</div>
+
+<button id="acceptMission">
+
+ACEPTO LA MISIÓN
+
+</button>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section id="success" class="page">
+
+<h1>
+
+MISIÓN ACEPTADA
+
+</h1>
+
+<div id="countdown">
+
+10
+
+</div>
+
+<p>
+
+Nos vemos el sábado...
+
+El reloj ya comenzó a correr.
+
+</p>
+
+</section>
+
+<audio id="introMusic" src="assets/audio/intro.mp3"></audio>
+
+<audio id="typing" src="assets/audio/typing.mp3"></audio>
+
+<audio id="unlock" src="assets/audio/unlock.mp3"></audio>
+
+<audio id="click" src="assets/audio/click.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

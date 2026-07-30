@@ -1,0 +1,534 @@
+/* ==========================================================
+   OPERACIÓN ENIGMA 12
+   Diseño Cyberpunk
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Orbitron',sans-serif;
+    background:#040510;
+    color:white;
+}
+
+/* Fondo */
+
+#backgroundVideo{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.22;
+
+    z-index:-3;
+
+}
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#7f4cff55,transparent 40%),
+    radial-gradient(circle at bottom,#00ffe555,transparent 45%),
+    rgba(0,0,0,.60);
+
+    z-index:-2;
+
+}
+
+/* Scanlines */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+repeating-linear-gradient(
+0deg,
+rgba(255,255,255,.03) 0px,
+rgba(255,255,255,.03) 2px,
+transparent 3px,
+transparent 6px);
+
+animation:scan 10s linear infinite;
+
+}
+
+@keyframes scan{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(6px);
+}
+
+}
+
+/* Pantallas */
+
+.page{
+
+position:absolute;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.page.active{
+
+display:flex;
+
+animation:fade .8s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.97);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* Logo */
+
+.logo{
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+.logo h1{
+
+font-size:50px;
+
+font-weight:900;
+
+letter-spacing:4px;
+
+color:#9b7bff;
+
+text-shadow:
+
+0 0 10px #8b5cff,
+
+0 0 30px #8b5cff,
+
+0 0 60px #8b5cff;
+
+margin-bottom:20px;
+
+}
+
+.logo p{
+
+font-size:22px;
+
+letter-spacing:8px;
+
+color:#00ffe5;
+
+}
+
+.logo-circle{
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+margin:auto;
+
+margin-bottom:30px;
+
+border:4px solid cyan;
+
+box-shadow:
+
+0 0 30px cyan,
+
+0 0 80px cyan;
+
+animation:rotate 10s linear infinite;
+
+}
+
+@keyframes rotate{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/* Barra */
+
+.loading{
+
+margin-top:60px;
+
+width:min(700px,90%);
+
+height:20px;
+
+background:#111827;
+
+border-radius:30px;
+
+overflow:hidden;
+
+border:2px solid cyan;
+
+}
+
+#progressBar{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#00ffe5,
+#7b5cff);
+
+box-shadow:
+
+0 0 20px cyan;
+
+}
+
+/* Scanner */
+
+#scanner{
+
+margin:40px;
+
+width:260px;
+
+height:260px;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+border:3px solid cyan;
+
+box-shadow:
+
+0 0 35px cyan;
+
+overflow:hidden;
+
+}
+
+#scanner img{
+
+width:160px;
+
+filter:drop-shadow(0 0 20px cyan);
+
+}
+
+#laser{
+
+position:absolute;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:#00ff99;
+
+box-shadow:
+
+0 0 15px #00ff99;
+
+animation:laser 2s infinite;
+
+}
+
+@keyframes laser{
+
+0%{
+
+top:0;
+
+}
+
+50%{
+
+top:100%;
+
+}
+
+100%{
+
+top:0;
+
+}
+
+}
+
+/* Terminal */
+
+pre{
+
+width:min(900px,95%);
+
+height:360px;
+
+background:black;
+
+color:#00ff7a;
+
+padding:25px;
+
+border-radius:20px;
+
+font-size:18px;
+
+overflow:auto;
+
+text-align:left;
+
+box-shadow:
+
+0 0 40px #00ff7a66;
+
+}
+
+/* Tarjeta */
+
+.card{
+
+max-width:700px;
+
+padding:40px;
+
+background:rgba(9,15,35,.75);
+
+backdrop-filter:blur(15px);
+
+border:2px solid cyan;
+
+border-radius:25px;
+
+box-shadow:
+
+0 0 40px rgba(0,255,255,.25);
+
+}
+
+.card h1{
+
+font-size:48px;
+
+color:#9b7bff;
+
+margin-bottom:10px;
+
+}
+
+.card h2{
+
+font-size:38px;
+
+color:white;
+
+}
+
+.card h3{
+
+font-size:30px;
+
+margin-bottom:30px;
+
+color:#00ffe5;
+
+}
+
+.info{
+
+margin-top:30px;
+
+padding:25px;
+
+border:2px solid rgba(0,255,255,.4);
+
+border-radius:15px;
+
+line-height:2;
+
+}
+
+/* Botones */
+
+button{
+
+margin-top:35px;
+
+padding:16px 40px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:linear-gradient(
+90deg,
+#00ffe5,
+#8b5cff);
+
+color:#081018;
+
+transition:.30s;
+
+box-shadow:
+
+0 0 25px cyan;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 45px cyan;
+
+}
+
+/* Inputs */
+
+input{
+
+margin-top:25px;
+
+padding:18px;
+
+width:300px;
+
+background:#081018;
+
+border:2px solid cyan;
+
+color:white;
+
+font-size:20px;
+
+text-align:center;
+
+border-radius:12px;
+
+outline:none;
+
+}
+
+/* Cuenta regresiva */
+
+#countdown{
+
+font-size:120px;
+
+font-weight:900;
+
+color:#00ffe5;
+
+margin:30px;
+
+text-shadow:
+
+0 0 20px cyan,
+
+0 0 40px cyan;
+
+animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
