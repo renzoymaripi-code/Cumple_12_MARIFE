@@ -455,7 +455,7 @@ document.getElementById("mapButton").onclick=()=>{
 
 window.open(
 
-"https://maps.google.com/?q=Jr.+Manuel+Arrisueño+637+Santa+Catalina+La+Victoria",
+"https://maps.google.com/?q=Manuel+Arrisueño+637",
 
 "_blank"
 
