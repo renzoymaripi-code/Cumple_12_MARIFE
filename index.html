@@ -165,38 +165,51 @@
 <section id="screen-riddle1"
          class="screen">
 
-    <div class="paper">
+    <div class="paper flashlight-puzzle">
 
-        <h2>
+        <div class="evidence-label">
+            EVIDENCIA #01
+        </div>
 
-            PRIMER DESAFÍO
+        <h2>PRIMER DESAFÍO</h2>
 
-        </h2>
-
-        <p>
-
-            Completa la palabra.
-
+        <p class="flashlight-instruction">
+            La habitación está a oscuras...
         </p>
 
-        <h3>
+        <p class="flashlight-instruction">
+            🔦 Mueve la linterna y encuentra las
+            <strong>6 letras ocultas</strong>.
+        </p>
 
-            E _ C A P E
+        <!-- LETRAS ESCONDIDAS -->
 
-        </h3>
+        <div class="hidden-clue clue-1">E</div>
+        <div class="hidden-clue clue-2">S</div>
+        <div class="hidden-clue clue-3">C</div>
+        <div class="hidden-clue clue-4">A</div>
+        <div class="hidden-clue clue-5">P</div>
+        <div class="hidden-clue clue-6">E</div>
 
-        <input
-               id="answer1"
-               autocomplete="off"
-               maxlength="6">
+        <div class="answer-zone">
 
-        <button id="btnAnswer1">
+            <label for="answer1">
+                PALABRA SECRETA
+            </label>
 
-            VERIFICAR
+            <input
+                id="answer1"
+                autocomplete="off"
+                maxlength="6"
+                placeholder="_ _ _ _ _ _">
 
-        </button>
+            <button id="btnAnswer1">
+                VERIFICAR CLAVE
+            </button>
 
-        <p id="error1"></p>
+            <p id="error1"></p>
+
+        </div>
 
     </div>
 
