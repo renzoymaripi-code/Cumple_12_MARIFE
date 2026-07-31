@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Operación Enigma | Marifé 12</title>
+
+    <meta name="theme-color" content="#111111">
+
+    <meta name="description"
+          content="Has sido seleccionada para una misión secreta...">
+
+    <!-- Tipografías -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Special+Elite&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- ===================================================== -->
+
+<!-- PANTALLA 1 -->
+
+<!-- EXPEDIENTE -->
+
+<!-- ===================================================== -->
+
+<section id="screen-intro"
+         class="screen active">
+
+    <div class="folder">
+
+        <div class="folder-top">
+
+            ARCHIVO CONFIDENCIAL
+
+        </div>
+
+        <div class="folder-body">
+
+            <p class="stamp">
+
+                CLASIFICACIÓN:
+                <span>SECRETO</span>
+
+            </p>
+
+            <h1>
+
+                OPERACIÓN ENIGMA
+
+            </h1>
+
+            <p>
+
+                Si este expediente llegó a tus manos...
+
+                es porque has sido seleccionada.
+
+            </p>
+
+            <p>
+
+                Antes de revelar la ubicación de la misión
+                deberás demostrar tus habilidades.
+
+            </p>
+
+            <button id="btnOpenFile">
+
+                ABRIR EXPEDIENTE
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+
+<!-- PANTALLA 2 -->
+
+<!-- MENSAJE -->
+
+<!-- ===================================================== -->
+
+<section id="screen-briefing"
+         class="screen">
+
+    <div class="paper">
+
+        <h2>
+
+            MENSAJE DEL DIRECTOR
+
+        </h2>
+
+        <p>
+
+            Agente...
+
+        </p>
+
+        <p>
+
+            Hemos perdido un objeto extremadamente valioso.
+
+        </p>
+
+        <p>
+
+            Solo una detective muy inteligente podrá recuperarlo.
+
+        </p>
+
+        <p>
+
+            Si completas todas las pruebas...
+
+            descubrirás el lugar de la reunión secreta.
+
+        </p>
+
+        <button id="btnMission">
+
+            ACEPTAR MISIÓN
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+
+<!-- PANTALLA 3 -->
+
+<!-- ACERTIJO -->
+
+<!-- ===================================================== -->
+
+<section id="screen-riddle1"
+         class="screen">
+
+    <div class="paper">
+
+        <h2>
+
+            PRIMER DESAFÍO
+
+        </h2>
+
+        <p>
+
+            Completa la palabra.
+
+        </p>
+
+        <h3>
+
+            E _ C A P E
+
+        </h3>
+
+        <input
+               id="answer1"
+               autocomplete="off"
+               maxlength="6">
+
+        <button id="btnAnswer1">
+
+            VERIFICAR
+
+        </button>
+
+        <p id="error1"></p>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- PANTALLA 4 — CÓDIGO SECRETO -->
+<!-- ===================================================== -->
+
+<section id="screen-riddle2" class="screen">
+
+    <div class="paper evidence-paper">
+
+        <div class="evidence-label">EVIDENCIA #02</div>
+
+        <h2>CÓDIGO INTERCEPTADO</h2>
+
+        <p>
+            Encontramos este mensaje dentro del expediente.
+            Parece esconder una fecha importante.
+        </p>
+
+        <div class="secret-code">
+            22 • 08 • 15
+        </div>
+
+        <p class="hint">
+            22 = día &nbsp; • &nbsp; 08 = mes &nbsp; • &nbsp; 15 = hora
+        </p>
+
+        <label for="answer2">¿Qué mes representa 08?</label>
+
+        <input
+            id="answer2"
+            autocomplete="off"
+            maxlength="10"
+            placeholder="Escribe el mes">
+
+        <button id="btnAnswer2">
+            DESCIFRAR CÓDIGO
+        </button>
+
+        <p id="error2" class="error-message"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 5 — ARCHIVO DESBLOQUEADO -->
+<!-- ===================================================== -->
+
+<section id="screen-unlocked" class="screen">
+
+    <div class="classified-file">
+
+        <div class="stamp-red">
+            DESCLASIFICADO
+        </div>
+
+        <h2>ACCESO AUTORIZADO</h2>
+
+        <div class="case-number">
+            EXPEDIENTE M-12
+        </div>
+
+        <p>
+            Excelente trabajo, agente.
+        </p>
+
+        <p>
+            Has superado las pruebas de acceso.
+        </p>
+
+        <p>
+            Podemos revelar parte de la información
+            relacionada con la misión.
+        </p>
+
+        <div class="redacted-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <button id="btnRevealLocation">
+            REVELAR PUNTO DE REUNIÓN
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 6 — RADAR -->
+<!-- ===================================================== -->
+
+<section id="screen-radar" class="screen">
+
+    <div class="radar-panel">
+
+        <p class="system-label">
+            SISTEMA DE LOCALIZACIÓN
+        </p>
+
+        <h2>BUSCANDO BASE SECRETA...</h2>
+
+        <div class="radar">
+
+            <div class="radar-line"></div>
+
+            <div class="radar-circle radar-circle-1"></div>
+            <div class="radar-circle radar-circle-2"></div>
+
+            <div class="radar-cross horizontal"></div>
+            <div class="radar-cross vertical"></div>
+
+            <div class="radar-target"></div>
+
+        </div>
+
+        <div id="radarStatus" class="radar-status">
+            ANALIZANDO COORDENADAS...
+        </div>
+
+        <div class="radar-progress">
+            <div id="radarProgress"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 7 — UBICACIÓN -->
+<!-- ===================================================== -->
+
+<section id="screen-map" class="screen">
+
+    <div class="location-file">
+
+        <div class="location-pin">
+            ◎
+        </div>
+
+        <p class="system-label">
+            OBJETIVO LOCALIZADO
+        </p>
+
+        <h2>BASE SECRETA ENCONTRADA</h2>
+
+        <div class="location-data">
+
+            <div>
+                <small>COORDENADAS</small>
+                <strong>-12.0876859, -77.0192969</strong>
+            </div>
+
+            <div>
+                <small>DIRECCIÓN</small>
+                <strong>
+                    Jr. Manuel Arrisueño 637
+                </strong>
+                <span>
+                    Urb. Santa Catalina — La Victoria
+                </span>
+            </div>
+
+            <div>
+                <small>REFERENCIA</small>
+                <span>
+                    Ingreso por Av. Campodónico cuadra 4
+                </span>
+            </div>
+
+        </div>
+
+        <button id="btnMaps" class="location-button">
+            LOCALIZAR BASE SECRETA
+        </button>
+
+        <button id="btnRevealInvitation" class="secondary-button">
+            ABRIR DOCUMENTO FINAL
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 8 — INVITACIÓN -->
+<!-- ===================================================== -->
+
+<section id="screen-invitation" class="screen">
+
+    <div class="invitation-file">
+
+        <div class="top-secret">
+            TOP SECRET
+        </div>
+
+        <p class="case-id">
+            EXPEDIENTE M-12
+        </p>
+
+        <p class="invitation-small">
+            MISIÓN ESPECIAL
+        </p>
+
+        <h1>
+            MARIFÉ
+        </h1>
+
+        <div class="big-number">
+            12
+        </div>
+
+        <p class="birthday-text">
+            ¡CUMPLE AÑOS!
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="invitation-message">
+            Has demostrado tener las habilidades necesarias
+            para formar parte de esta misión.
+        </p>
+
+        <p class="invitation-message">
+            Ahora estás oficialmente invitada a una tarde
+            llena de acertijos, claves, candados y secretos.
+        </p>
+
+        <div class="event-data">
+
+            <div class="event-row">
+                <span class="event-label">FECHA</span>
+                <strong>Sábado 22 de agosto</strong>
+            </div>
+
+            <div class="event-row">
+                <span class="event-label">HORA</span>
+                <strong>3:00 p. m.</strong>
+            </div>
+
+            <div class="event-row">
+                <span class="event-label">LUGAR</span>
+                <strong>Jr. Manuel Arrisueño 637</strong>
+                <span>Urb. Santa Catalina — La Victoria</span>
+            </div>
+
+            <div class="event-row">
+                <span class="event-label">REFERENCIA</span>
+                <span>Ingreso por Av. Campodónico cuadra 4</span>
+            </div>
+
+        </div>
+
+        <div class="warning-box">
+            ⚠️
+            <strong>ADVERTENCIA</strong>
+            <span>
+                La misión comenzará puntualmente.
+                No llegues tarde.
+            </span>
+        </div>
+
+        <button id="btnAccept">
+            ACEPTAR MISIÓN
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 9 — IDENTIFICACIÓN FINAL -->
+<!-- ===================================================== -->
+
+<section id="screen-agent" class="screen">
+
+    <div class="agent-registration">
+
+        <div class="stamp-red small-stamp">
+            CONFIDENCIAL
+        </div>
+
+        <h2>IDENTIFICACIÓN DE AGENTE</h2>
+
+        <p>
+            Para completar el expediente necesitamos
+            registrar tu nombre.
+        </p>
+
+        <label for="agentName">
+            NOMBRE DE LA AGENTE
+        </label>
+
+        <input
+            id="agentName"
+            type="text"
+            maxlength="24"
+            autocomplete="off"
+            placeholder="Escribe tu nombre">
+
+        <button id="btnRegisterAgent">
+            REGISTRAR IDENTIDAD
+        </button>
+
+        <p id="agentError" class="error-message"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PANTALLA 10 — CREDENCIAL -->
+<!-- ===================================================== -->
+
+<section id="screen-final" class="screen">
+
+    <div class="final-content">
+
+        <p class="mission-complete">
+            MISIÓN COMPLETADA
+        </p>
+
+        <div class="agent-card">
+
+            <div class="agent-card-header">
+                AGENCIA INTERNACIONAL DE DETECTIVES
+            </div>
+
+            <div class="agent-card-content">
+
+                <div class="agent-symbol">
+                    M12
+                </div>
+
+                <small>AGENTE AUTORIZADA</small>
+
+                <h2 id="finalAgentName">
+                    AGENTE
+                </h2>
+
+                <div class="agent-code">
+
+                    <span>ID DE AGENTE</span>
+
+                    <strong id="finalAgentCode">
+                        M12-0000
+                    </strong>
+
+                </div>
+
+                <div class="clearance">
+                    NIVEL DE ACCESO: AUTORIZADO
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="final-message">
+            Tu participación ha sido confirmada.
+        </p>
+
+        <p class="final-message">
+            Prepárate, agente. El reloj ya está corriendo...
+        </p>
+
+
+        <!-- CUENTA REGRESIVA -->
+
+        <div class="countdown-title">
+            TIEMPO PARA EL INICIO DE LA MISIÓN
+        </div>
+
+        <div id="countdown" class="countdown">
+
+            <div>
+                <strong id="days">00</strong>
+                <span>DÍAS</span>
+            </div>
+
+            <div>
+                <strong id="hours">00</strong>
+                <span>HORAS</span>
+            </div>
+
+            <div>
+                <strong id="minutes">00</strong>
+                <span>MIN</span>
+            </div>
+
+            <div>
+                <strong id="seconds">00</strong>
+                <span>SEG</span>
+            </div>
+
+        </div>
+
+
+        <button id="btnFinalMaps">
+            VER UBICACIÓN
+        </button>
+
+        <button id="btnRestart" class="secondary-button">
+            REINICIAR MISIÓN
+        </button>
+
+    </div>
+
+</section>
+
+</div>
+
+<script src="js/app.js"></script>
+
+<div id="flashlight"></div>
+
+</body>
+
+</html>
