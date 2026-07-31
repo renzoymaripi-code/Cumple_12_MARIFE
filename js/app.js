@@ -456,6 +456,8 @@ document.getElementById("mapButton").addEventListener("click", () => {
     const lat = -12.0876859;
     const lng = -77.0192969;
 
-    window.location.href = `https://www.google.com/maps?q=${lat},${lng}`;
+    const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+
+    window.open(url, "_blank");
 
 });
