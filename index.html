@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>Operación Enigma 12</title>
+
+<meta name="theme-color" content="#0b1025">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<section id="boot" class="screen active">
+
+<section id="agent" class="screen">
+
+    <div class="glassCard">
+
+        <h1>REGISTRO DE AGENTE</h1>
+
+        <p>
+
+            Antes de comenzar la misión necesitamos registrar tu identidad.
+
+        </p>
+
+        <input
+            type="text"
+            id="agentName"
+            maxlength="20"
+            placeholder="Escribe tu nombre">
+
+        <button id="createAgent">
+
+            CREAR CREDENCIAL
+
+        </button>
+
+    </div>
+
+</section>
+
+<div class="stars"></div>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="logoBox">
+
+<div class="shield">
+
+🛡️
+
+</div>
+
+<h1>
+
+AGENCIA INTERNACIONAL
+
+DE DETECTIVES
+
+</h1>
+
+<h2>
+
+OPERACIÓN ENIGMA
+
+</h2>
+
+<p>
+
+La Agencia Internacional de Detectives necesita a las mejores agentes para resolver un misterio.
+
+Solo quienes acepten esta misión podrán descubrir los secretos escondidos durante la fiesta de cumpleaños de Marifé.
+
+¿Aceptas el reto?
+
+</p>
+
+</div>
+
+<div class="loadingBox">
+
+<div class="progress">
+
+<div id="progress"></div>
+
+</div>
+
+<p id="status">
+
+Conectando...
+
+</p>
+
+</div>
+
+</section>
+
+<section id="scanner" class="screen">
+
+<h1>
+
+IDENTIFICACIÓN
+
+</h1>
+
+<p>
+
+Presiona el escáner para ingresar.
+
+</p>
+
+<div id="scannerCircle">
+
+<div class="pulse p1"></div>
+
+<div class="pulse p2"></div>
+
+<div class="pulse p3"></div>
+
+<div class="finger">
+
+🖐
+
+</div>
+
+</div>
+
+<button id="scanBtn">
+
+ESCANEAR HUELLA
+
+</button>
+
+</section>
+
+<section id="terminal" class="screen">
+
+<div class="terminalWindow">
+
+<div class="terminalHeader">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+<span>secure_terminal.exe</span>
+
+</div>
+
+<div class="terminalBody">
+
+<pre id="console"></pre>
+
+</div>
+
+</div>
+
+<button id="continueBtn">
+
+INICIAR MISIÓN
+
+</button>
+
+</section>
+<section id="challenge" class="screen">
+
+<h2>
+
+PRIMER ENIGMA
+
+</h2>
+
+<p>
+
+Completa la palabra secreta.
+
+</p>
+
+<div class="word">
+
+<div class="encrypted">
+
+E
+
+<span>?</span>
+
+C
+
+A
+
+P
+
+E
+
+</div>
+
+</div>
+
+<input
+id="answer"
+placeholder="Escribe aquí">
+
+<button id="check">
+
+DESBLOQUEAR
+
+</button>
+
+<p id="result"></p>
+
+</section>
+
+<section id="mission" class="screen">
+
+<section id="credential" class="screen">
+
+    <div class="credential">
+
+        <div class="credentialHeader">
+
+            AGENCIA INTERNACIONAL
+
+        </div>
+
+        <div class="credentialBody">
+
+            <div class="photoArea">
+
+                🕵️‍♀️
+
+            </div>
+
+            <h2 id="credentialName">
+
+                AGENTE
+
+            </h2>
+
+            <p>
+
+                Código:
+
+            </p>
+
+            <h3 id="credentialCode">
+
+                A-0000
+
+            </h3>
+
+            <p>
+
+                Nivel OMEGA
+
+            </p>
+
+        </div>
+
+        <button id="continueCredential">
+
+            CONTINUAR MISIÓN
+
+        </button>
+
+    </div>
+
+</section>
+
+    <div class="missionCard">
+
+        <div class="signal"></div>
+
+        <h1>📡 TRANSMISIÓN RECIBIDA</h1>
+
+        <h2>PUNTO DE REUNIÓN DETECTADO</h2>
+
+        <p class="security">
+
+            NIVEL DE SEGURIDAD:
+            <span>ALTO</span>
+
+        </p>
+
+        <div class="coordinates">
+
+            LAT:
+            -12.0876859
+
+            <br>
+
+            LNG:
+            -77.0192969
+
+        </div>
+
+        <button id="locate">
+
+            LOCALIZAR BASE SECRETA
+
+        </button>
+
+        <button id="continueMission">
+
+            CONTINUAR
+
+        </button>
+
+    </div>
+
+</section>
+
+<section id="invite" class="screen">
+
+<div class="glassCard">
+
+<div class="classified">
+TOP SECRET
+</div>
+
+<h1 class="missionTitle">
+
+OPERACIÓN ENIGMA
+
+</h1>
+
+<div class="agentPhoto">
+
+<div class="photoGlow"></div>
+
+👤
+
+</div>
+
+<h2>
+
+AGENTE MARIFÉ
+
+</h2>
+
+<h3>
+
+MISIÓN 12
+
+</h3>
+
+<p class="missionText">
+
+La Agencia Internacional de Detectives ha interceptado una transmisión secreta.
+
+Solo un grupo de agentes muy especiales podrá resolver todos los enigmas antes de que el tiempo termine.
+
+Tu presencia es indispensable.
+
+</p>
+
+<div class="missionInfo">
+
+<div>
+
+📅
+
+<strong>22 de agosto</strong>
+
+</div>
+
+<div>
+
+🕒
+
+<strong>3:00 p. m.</strong>
+
+</div>
+
+<div>
+
+📍
+
+<strong>Jr. Manuel Arrisueño 637</strong>
+
+</div>
+
+<div>
+
+Santa Catalina – La Victoria
+
+</div>
+
+<div class="reference">
+
+🚗 Ingreso por Av. Campodónico cuadra 4
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button id="mapButton">
+
+📍 VER UBICACIÓN
+
+</button>
+
+<button id="accept">
+
+🚀 ACEPTAR MISIÓN
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section id="accepted" class="screen">
+
+<div class="success">
+
+<div class="check">
+
+✔
+
+</div>
+
+<h1>
+
+MISIÓN ACEPTADA
+
+</h1>
+
+<p>
+
+Nos vemos muy pronto, Agente.
+
+Prepárate para una tarde llena de misterios.
+
+</p>
+
+<div id="count">
+
+10
+
+</div>
+
+</div>
+
+</section>
+
+<audio id="click" src="audio/click.mp3"></audio>
+
+<audio id="unlock" src="audio/unlock.mp3"></audio>
+
+<audio id="typing" src="audio/typing.mp3"></audio>
+
+<audio
+id="music"
+src="audio/mission.mp3"
+loop>
+</audio>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
