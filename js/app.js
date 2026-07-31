@@ -1396,3 +1396,34 @@ document.addEventListener(
 
     }
 );
+
+document.addEventListener("touchmove", function (event) {
+
+    if (currentScreen !== "screen-riddle1") return;
+
+    const touch = event.touches[0];
+    if (!touch) return;
+
+    const flashlight = document.getElementById("flashlight");
+
+    flashlight.style.setProperty(
+        "left",
+        touch.clientX + "px",
+        "important"
+    );
+
+    flashlight.style.setProperty(
+        "top",
+        touch.clientY + "px",
+        "important"
+    );
+
+    flashlight.style.transform = "translate(-50%, -50%)";
+
+    console.log(
+        "DEDO:",
+        touch.clientX,
+        touch.clientY
+    );
+
+}, { passive: true });
