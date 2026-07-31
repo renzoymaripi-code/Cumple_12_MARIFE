@@ -1319,3 +1319,123 @@ input:focus {
 body.flashlight-active #flashlight {
     opacity: 1;
 }
+
+/* =========================================================
+   ACERTIJO DE LA LINTERNA
+========================================================= */
+
+.flashlight-puzzle {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.flashlight-instruction {
+    margin-top: 15px;
+    text-align: center;
+    font-family: "Special Elite", monospace;
+}
+
+.hidden-clue {
+    position: absolute;
+
+    z-index: 1100;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #5d1717;
+
+    font-family: "Special Elite", monospace;
+    font-size: 2rem;
+    font-weight: bold;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+
+/* POSICIONES DE LAS PISTAS */
+
+.clue-1 {
+    left: 12%;
+    top: 38%;
+    transform: rotate(-12deg);
+}
+
+.clue-2 {
+    right: 12%;
+    top: 31%;
+    transform: rotate(9deg);
+}
+
+.clue-3 {
+    left: 42%;
+    top: 45%;
+    transform: rotate(-5deg);
+}
+
+.clue-4 {
+    left: 17%;
+    top: 57%;
+    transform: rotate(14deg);
+}
+
+.clue-5 {
+    right: 18%;
+    top: 55%;
+    transform: rotate(-10deg);
+}
+
+.clue-6 {
+    left: 46%;
+    top: 66%;
+    transform: rotate(7deg);
+}
+
+
+/* ZONA PARA INTRODUCIR LA RESPUESTA */
+
+.answer-zone {
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+
+    z-index: 1100;
+
+    padding-top: 15px;
+
+    border-top: 1px dashed #817964;
+}
+
+.answer-zone label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: .7rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-height: 700px) {
+
+    .flashlight-puzzle {
+        min-height: 540px;
+    }
+
+    .hidden-clue {
+        font-size: 1.7rem;
+    }
+}
