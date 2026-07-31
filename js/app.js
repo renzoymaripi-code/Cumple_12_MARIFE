@@ -451,14 +451,11 @@ duration:250
 
 }
 
-document.getElementById("mapButton").onclick=()=>{
+document.getElementById("mapButton").addEventListener("click", () => {
 
-window.open(
+    const lat = -12.0876859;
+    const lng = -77.0192969;
 
-"https://maps.google.com/?q=Manuel+Arrisueño+637",
+    window.location.href = `https://www.google.com/maps?q=${lat},${lng}`;
 
-"_blank"
-
-);
-
-};
+});
